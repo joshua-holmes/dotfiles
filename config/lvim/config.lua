@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "tokyonight-night"
+lvim.colorscheme = "tokyonight-storm"
 lvim.transparent_window = true
 vim.opt.breakindent = true
 vim.opt.scrolloff = 999
