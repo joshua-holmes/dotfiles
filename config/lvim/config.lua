@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "tokyonight-storm"
+lvim.colorscheme = "slate"
 lvim.transparent_window = true
 vim.opt.breakindent = true
 vim.opt.scrolloff = 999
@@ -185,8 +185,24 @@ lvim.plugins = {
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-  }
+  },
+  {
+    "nvim-pack/nvim-spectre",
+  },
+  {
+    "simrat39/rust-tools.nvim",
+  },
 }
+
+vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").open()<CR>', {
+  desc = "Open Spectre"
+})
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+  desc = "Search current word"
+})
+vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+  desc = "Search current word"
+})
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
