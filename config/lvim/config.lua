@@ -192,8 +192,12 @@ lvim.plugins = {
   {
     "simrat39/rust-tools.nvim",
   },
+  {
+    "tamton-aquib/duck.nvim",
+  },
 }
 
+-- Spectre keybinds
 vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").open()<CR>', {
   desc = "Open Spectre"
 })
@@ -203,6 +207,19 @@ vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({sele
 vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
   desc = "Search current word"
 })
+
+-- Duck keybinds
+lvim.builtin.which_key.mappings["D"] = {
+  name = "Duck",
+  h = { "<cmd>lua require('duck').hatch('🦆', 1)<cr>", "Hatch little ducky" },
+  k = { "<cmd>lua require('duck').cook()<cr>", "Kill little ducky" }
+}
+-- vim.keymap.set('n', '<leader>Dh', '<cmd>lua require("duck").hatch("󰇥", 1)<cr>', {
+--   desc = "Hatch little ducky"
+-- })
+-- vim.keymap.set('n', '<leader>Dk', '<cmd>lua require("duck").cook()<cr>', {
+--   desc = "Kill little ducky"
+-- })
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
