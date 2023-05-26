@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "slate"
+lvim.colorscheme = "habamax"
 lvim.transparent_window = true
 vim.opt.breakindent = true
 vim.opt.scrolloff = 999
