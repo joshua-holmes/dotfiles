@@ -9,8 +9,6 @@ fi
 source "$(dirname $0)/../swww.conf" 
 
 while true; do
-    echo BEFORE
     sleep "$TIMER"
     "$(dirname $0)/set-random-image.sh";
-    echo AFTER
 done
