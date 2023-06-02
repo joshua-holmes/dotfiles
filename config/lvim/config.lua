@@ -198,15 +198,18 @@ lvim.plugins = {
 }
 
 -- Spectre keybinds
-vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").open()<CR>', {
-  desc = "Open Spectre"
-})
-vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-  desc = "Search current word"
-})
-vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-  desc = "Search current word"
-})
+lvim.builtin.which_key.mappings["S"] = {
+  "<cmd>lua require('spectre').open()<CR>",
+  "Open Spectre"
+}
+lvim.builtin.which_key.mappings["sw"] = {
+  "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+  "Search current word"
+}
+lvim.builtin.which_key.vmappings["s"] = {
+  name = "Search",
+  w = { "<esc><cmd>lua require('spectre').open_visual()<CR>", "Search current word" }
+}
 
 -- Duck keybinds
 lvim.builtin.which_key.mappings["D"] = {
