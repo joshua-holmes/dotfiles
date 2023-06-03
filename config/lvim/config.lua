@@ -31,6 +31,9 @@ vim.opt.softtabstop = 0
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.builtin.which_key.mappings["bs"] = { ":vsplit<CR>", "Split window vertically" }
+lvim.builtin.which_key.mappings["bS"] = { ":split<CR>", "Split window horizontally" }
+
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
