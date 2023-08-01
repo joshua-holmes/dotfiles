@@ -48,6 +48,8 @@ keymap("v", ">", ">gv^", opts)
 -- Move text up and down
 keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+-- keymap("v", "p", '"_dp', opts) -- makes paste do unpredictable things sometimes
+-- keymap("v", "P", '"_dP', opts) -- makes paste do unpredictable things sometimes
 
 -- Terminal --
 -- Better terminal navigation
