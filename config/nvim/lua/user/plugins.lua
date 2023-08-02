@@ -44,7 +44,11 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-    use "iamcco/markdown-preview.nvim" -- Markdown preview in browser
+    use { -- Markdown preview in browser
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreview", "MarkdownPreviewToggle" },
+        run = function() fn["mkdp#util#install"]() end,
+    }
     use "nvim-pack/nvim-spectre" -- Tool to replace all text in entire git repo
     use "simrat39/rust-tools.nvim" -- Useful tools for programming in Rust
     use "tamton-aquib/duck.nvim" -- Absolutely not useful...
