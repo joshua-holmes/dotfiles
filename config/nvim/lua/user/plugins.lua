@@ -29,6 +29,12 @@ if not status_ok then
     return
 end
 
+local status_ok, mason = pcall(require, "mason")
+if not status_ok then
+    return
+end
+mason.setup()
+
 -- Have packer use a popup window
 packer.init {
     display = {
@@ -62,10 +68,18 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lua"
 
     -- Snippets
     use "L3MON4D3/LuaSnip" --snippet engine
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+    -- LSP
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/mason.nvim" -- simple to use language server installer
+    use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+    use 'jose-elias-alvarez/null-ls.nvim' -- LSP diagnostics and code actions
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
