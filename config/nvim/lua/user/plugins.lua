@@ -59,6 +59,7 @@ return packer.startup(function(use)
     use "kyazdani42/nvim-tree.lua"
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
+    use "akinsho/toggleterm.nvim"
 
     -- Colorschemes
     use "rebelot/kanagawa.nvim"
