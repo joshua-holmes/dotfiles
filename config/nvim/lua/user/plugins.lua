@@ -52,7 +52,9 @@ return packer.startup(function(use)
     use "nvim-pack/nvim-spectre" -- Tool to replace all text in entire git repo
     use "simrat39/rust-tools.nvim" -- Useful tools for programming in Rust
     use "tamton-aquib/duck.nvim" -- Absolutely not useful...
+    use "HiPhish/rainbow-delimiters.nvim"
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+    use "numToStr/Comment.nvim" -- Easily comment stuff
 
     -- Colorschemes
     use "rebelot/kanagawa.nvim"
@@ -85,7 +87,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    use "HiPhish/rainbow-delimiters.nvim"
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
