@@ -52,6 +52,7 @@ return packer.startup(function(use)
     use "nvim-pack/nvim-spectre" -- Tool to replace all text in entire git repo
     use "simrat39/rust-tools.nvim" -- Useful tools for programming in Rust
     use "tamton-aquib/duck.nvim" -- Absolutely not useful...
+    use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
     -- Colorschemes
     use "rebelot/kanagawa.nvim"
