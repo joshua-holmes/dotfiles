@@ -103,7 +103,7 @@ local n_mappings = {
     c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     h = { "<cmd>nohlsearch<CR>", "No Highlight" },
     f = {
-        "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+        ":Telescope find_files<CR>",
         "Find files",
     },
     F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
@@ -174,7 +174,6 @@ local n_mappings = {
     },
     s = {
         name = "Search",
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
         M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
