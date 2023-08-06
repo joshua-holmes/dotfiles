@@ -41,6 +41,10 @@ keymap("n", "<S-c>", "<cmd>Bdelete!<CR>", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
+-- Better intendation
+keymap("n", "<", "<<", opts)
+keymap("n", ">", ">>", opts)
+
 
 -- Visual --
 -- Stay in indent mode
