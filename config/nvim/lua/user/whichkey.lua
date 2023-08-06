@@ -9,7 +9,7 @@ local setup = {
         registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
         spelling = {
             enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-            suggestions = 20, -- how many suggestions should be shown in the list?
+            suggestions = 30, -- how many suggestions should be shown in the list?
         },
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
@@ -55,7 +55,7 @@ local setup = {
         spacing = 3,                                                            -- spacing between columns
         align = "left",                                                         -- align columns left, center or right
     },
-    ignore_missing = true,                                                      -- enable this to hide mappings for which you didn't specify a label
+    ignore_missing = false,                                                     -- enable this to hide mappings for which you didn't specify a label
     hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
     show_help = true,                                                           -- show help message on the command line when the popup is visible
     triggers = "auto",                                                          -- automatically setup triggers
@@ -69,32 +69,44 @@ local setup = {
     },
 }
 
-local opts = {
-    mode = "n",   -- NORMAL mode
+local default_opts = {
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
     silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
     nowait = true, -- use `nowait` when creating keymaps
 }
 
-local mappings = {
+local function create_opts_table(mode, noremap)
+    local new_table = {}
+    for k, v in pairs(default_opts) do
+        new_table[k] = v
+    end
+    new_table["mode"] = mode
+    new_table["noremap"] = noremap
+    return new_table
+end
+
+local n_opts = create_opts_table("n", true)
+local n_opts_remap = create_opts_table("n", false)
+local v_opts_remap = create_opts_table("v", false)
+
+local n_mappings = {
     [";"] = { "<cmd>Alpha<cr>", "Alpha" },
-    ["b"] = {
+    b = {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Buffers",
     },
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["w"] = { "<cmd>w!<CR>", "Save" },
-    ["q"] = { "<cmd>q!<CR>", "Quit" },
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-    ["f"] = {
+    e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    w = { "<cmd>w!<CR>", "Save" },
+    q = { "<cmd>q!<CR>", "Quit" },
+    c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    f = {
         "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Find files",
     },
-    ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-    ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
     p = {
         name = "Packer",
@@ -173,15 +185,21 @@ local mappings = {
 
     t = {
         name = "Terminal",
-        n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-        u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-        t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
 }
 
+local n_mappings_remap = {
+    ["/"] = { "gcc", "Comment" },
+}
+
+local v_mappings_remap = {
+    ["/"] = { "gc", "Comment" }
+}
+
 which_key.setup(setup)
-which_key.register(mappings, opts)
+which_key.register(n_mappings, n_opts)
+which_key.register(n_mappings_remap, n_opts_remap)
+which_key.register(v_mappings_remap, v_opts_remap)
