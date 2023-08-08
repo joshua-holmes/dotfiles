@@ -116,7 +116,7 @@ local n_mappings = {
         s = { "<cmd>PackerSync<cr>", "Sync" },
         S = { "<cmd>PackerStatus<cr>", "Status" },
         u = { "<cmd>PackerUpdate<cr>", "Update" },
-    },
+   },
 
     g = {
         name = "Git",
@@ -181,6 +181,7 @@ local n_mappings = {
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
+        w = { "<cmd>Spectre<cr>", "Find and replace across repo" },
     },
 
     t = {
