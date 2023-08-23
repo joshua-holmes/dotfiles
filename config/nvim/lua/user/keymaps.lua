@@ -25,8 +25,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-s>", ":write<CR>", opts)
-keymap("n", "<CS-j>", ":split<CR>", opts)
-keymap("n", "<CS-l>", ":vsplit<CR>", opts)
+keymap("n", "<C-;>", ":split<CR>", opts)
+keymap("n", "<C-'>", ":vsplit<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
