@@ -11,12 +11,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Modes
+--   all modes = "",
 --   normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+
+
+-- All modes --
+-- Select all text
+keymap("", "<C-z>", "<esc>gg<S-v><S-g>", opts)
+
 
 -- Normal --
 -- Better window navigation
