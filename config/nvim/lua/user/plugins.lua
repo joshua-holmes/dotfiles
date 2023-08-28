@@ -47,7 +47,6 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
     use {                        -- Markdown preview in browser
         "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreview", "MarkdownPreviewToggle" },
         run = function() fn["mkdp#util#install"]() end,
     }
     use "nvim-pack/nvim-spectre"   -- Tool to replace all text in entire git repo

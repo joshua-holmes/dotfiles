@@ -97,6 +97,10 @@ local n_mappings = {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Buffers",
     },
+    d = {
+        name = "Document",
+        m = { ":MarkdownPreviewToggle<cr>", "Markdown Preview Toggle" },
+    },
     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     w = { "<cmd>w!<CR>", "Save" },
     q = { "<cmd>q!<CR>", "Quit" },
