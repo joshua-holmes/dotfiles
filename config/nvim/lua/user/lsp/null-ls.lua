@@ -14,7 +14,7 @@ null_ls.setup({
     sources = {
         formatting.prettier.with({
             extra_args = {
-                "--tab-width", "4",
+                "--tab-width", "2",
                 "--semi", "true",
             }
         }),
