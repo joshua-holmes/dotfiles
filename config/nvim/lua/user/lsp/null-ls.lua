@@ -12,7 +12,12 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
     debug = false,
     sources = {
-        formatting.prettier,
+        formatting.prettier.with({
+            extra_args = {
+                "--tab-width", "4",
+                "--semi", "true",
+            }
+        }),
         formatting.black.with({ extra_args = { "--line-length", "120" } }),
         formatting.stylua,
         -- diagnostics.flake8
