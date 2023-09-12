@@ -8,6 +8,9 @@ telescope.load_extension('media_files')
 
 local actions = require "telescope.actions"
 
+-- I don't want to search in the `.git` directory.
+local glob = "!**/.git/*"
+
 telescope.setup {
     defaults = {
 
@@ -90,6 +93,15 @@ telescope.setup {
         -- builtin picker
         planets = {
             show_pluto = true,
+        },
+
+        -- I don't know why setting the same arguments for different telescope functions must look so different
+        live_grep = {
+            glob_pattern = glob,
+            additional_args = { "--hidden" },
+        },
+        find_files = {
+            find_command = { "rg", "--files", "--hidden", "--glob", glob },
         },
     },
     extensions = {
