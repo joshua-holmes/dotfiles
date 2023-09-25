@@ -10,6 +10,10 @@ local formatting = null_ls.builtins.formatting
 -- local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
+    on_init = function(new_client, _)
+        -- Required for clang_format warning about multiple offset_encoding values set at the same time
+        new_client.offset_encoding = "utf-8"
+    end,
     debug = false,
     sources = {
         formatting.prettier.with({
@@ -20,6 +24,7 @@ null_ls.setup({
         }),
         formatting.black.with({ extra_args = { "--line-length", "120" } }),
         formatting.stylua,
+        formatting.clang_format,
         -- diagnostics.flake8
     },
 })
