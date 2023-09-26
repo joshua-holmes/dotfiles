@@ -212,13 +212,6 @@ local n_mappings = {
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
 }
-local stuff = vim.bo.filetype
-print("STUFF", stuff)
--- if vim.lsp.get_active_clients() then
---     n_mappings.l.c = {
---         "<cmd>!clang-include-cleaner --edit " .. vim.api.nvim_buf_get_name(0) .. "<cr>", 'C++ "include" header cleanup'
---     }
--- end
 
 local n_mappings_remap = {
     ["/"] = { "gcc", "Comment" },
