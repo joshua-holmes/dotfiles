@@ -24,9 +24,6 @@ for _, glob in ipairs(globs) do
     table.insert(rg_find_command, "--glob")
     table.insert(rg_find_command, glob)
 end
-for _, thing in ipairs(rg_find_command) do
-    print(thing)
-end
 
 telescope.setup {
     defaults = {
