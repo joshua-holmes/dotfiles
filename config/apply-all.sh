@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-dir="$(dirname $0)"
+dir="$(realpath $(dirname $0))"
 
 echo
 echo "WARNING: This program will wipe the following config folders and files from your ~/.config directory (if they exist):"

@@ -5,11 +5,26 @@ if not status_ok then
 end
 
 telescope.load_extension('media_files')
+telescope.load_extension('hg')
 
 local actions = require "telescope.actions"
 
--- I don't want to search in the `.git` directory.
-local glob = "!**/.git/*"
+-- I don't want to search in the `.git` or `.hg` (mercurial) directory.
+local globs = {
+    "!**/.git/*",
+    "!**/.hg/*",
+}
+
+
+local rg_find_command = {
+    "rg",
+    "--files",
+    "--hidden",
+}
+for _, glob in ipairs(globs) do
+    table.insert(rg_find_command, "--glob")
+    table.insert(rg_find_command, glob)
+end
 
 telescope.setup {
     defaults = {
@@ -97,11 +112,11 @@ telescope.setup {
 
         -- I don't know why setting the same arguments for different telescope functions must look so different
         live_grep = {
-            glob_pattern = glob,
+            glob_pattern = globs,
             additional_args = { "--hidden" },
         },
         find_files = {
-            find_command = { "rg", "--files", "--hidden", "--glob", glob },
+            find_command = rg_find_command,
         },
     },
     extensions = {

@@ -67,6 +67,7 @@ return packer.startup(function(use)
     use "folke/which-key.nvim"
     use "nvim-lualine/lualine.nvim"
     use "tpope/vim-sleuth"
+    use "echasnovski/mini.nvim"
 
     -- Colorschemes
     use "rebelot/kanagawa.nvim"
@@ -104,6 +105,9 @@ return packer.startup(function(use)
 
     -- Git
     use "lewis6991/gitsigns.nvim"
+
+    -- Mercurial
+    use "jackysee/telescope-hg.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
