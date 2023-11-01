@@ -122,7 +122,7 @@ local n_mappings = {
     w = { "<cmd>w!<CR>", "Save" },
     q = { "<cmd>q!<CR>", "Quit" },
     c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-    h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    h = { "<cmd>nohlsearch<CR><cmd>lua require('mini.map').refresh()<CR>", "No Highlight" },
     f = {
         ":Telescope find_files<CR>",
         "Find files",
