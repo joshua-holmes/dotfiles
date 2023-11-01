@@ -193,6 +193,13 @@ local n_mappings = {
             "Workspace Symbols",
         },
     },
+    m = {
+        name = "MiniMap",
+        m = { "<cmd>lua require('mini.map').toggle()<cr>", "Toggle" },
+        r = { "<cmd>lua require('mini.map').refresh()<cr>", "Refresh" },
+        o = { "<cmd>lua require('mini.map').open()<cr>", "Open" },
+        c = { "<cmd>lua require('mini.map').close()<cr>", "Close" },
+    },
     s = {
         name = "Search",
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },

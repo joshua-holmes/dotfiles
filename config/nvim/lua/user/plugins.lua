@@ -67,6 +67,7 @@ return packer.startup(function(use)
     use "folke/which-key.nvim"
     use "nvim-lualine/lualine.nvim"
     use "tpope/vim-sleuth"
+    use "echasnovski/mini.nvim"
 
     -- Colorschemes
     use "rebelot/kanagawa.nvim"
