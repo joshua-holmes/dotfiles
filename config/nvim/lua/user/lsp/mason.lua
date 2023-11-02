@@ -14,6 +14,7 @@ local servers = {
     "marksman",
     "pyright",
     "rust_analyzer",
+    "sqlls",
     "tsserver",
     "vimls",
     "yamlls",

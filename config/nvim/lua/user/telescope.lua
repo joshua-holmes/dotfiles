@@ -5,7 +5,9 @@ if not status_ok then
 end
 
 telescope.load_extension('media_files')
-telescope.load_extension('hg')
+
+---- hg extension, just in case you run across a repo that uses it
+-- telescope.load_extension('hg')
 
 local actions = require "telescope.actions"
 

@@ -56,4 +56,3 @@ Or you can `git clone` your folder somewhere and link a single folder like so (t
 ```
 rm -fr ~/.config/hypr/ && ln -s <your chosen directory>/config/hypr/ ~/.config/.
 ```
-
