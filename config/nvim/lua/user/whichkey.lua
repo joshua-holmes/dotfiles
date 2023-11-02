@@ -109,7 +109,7 @@ local n_opts_remap = create_opts_table("n", false)
 local v_opts_remap = create_opts_table("v", false)
 
 local n_mappings = {
-    [";"] = { "<cmd>Alpha<cr>", "Alpha" },
+    [";"] = { "<cmd>Alpha<cr>", "Dashboard" },
     b = {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Buffers",
