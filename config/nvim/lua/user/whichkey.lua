@@ -110,6 +110,14 @@ local v_opts_remap = create_opts_table("v", false)
 
 local n_mappings = {
     [";"] = { "<cmd>Alpha<cr>", "Dashboard" },
+    a = {
+        -- NOTE: Entirely custom commands that are created for my current needs",
+        name = "Ad Hoc",
+        s = {
+            name = "Servo",
+            t = { "<cmd>lua _TEST_SERVO()<CR>", "Run test on current buffer" },
+        }
+    },
     b = {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Buffers",

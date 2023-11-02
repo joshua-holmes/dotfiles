@@ -60,3 +60,13 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 function _PYTHON_TOGGLE()
     python:toggle()
 end
+
+local test_servo = Terminal:new({ hidden = false })
+function _TEST_SERVO()
+    local cur_buffer_dir = vim.api.nvim_buf_get_name(0)
+    local ending_cmd = " && echo DONE && sleep 1d"
+    local cmd = "./mach test-wpt -d " .. cur_buffer_dir .. ending_cmd
+    test_servo.cmd = cmd
+    test_servo:toggle()
+end
+
