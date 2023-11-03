@@ -27,6 +27,14 @@ toggleterm.setup({
     },
 })
 
+local function wrap_cmd(cmd, exit_after_run)
+    local end_cmd = "; echo \"\nneovim finished running cmd with code $?:\" && echo '" .. cmd .. "'"
+    if not exit_after_run then
+        end_cmd = end_cmd .. " && sleep 1d"
+    end
+    return cmd .. end_cmd
+end
+
 function _G.set_terminal_keymaps()
     local opts = { noremap = true }
     vim.api.nvim_buf_set_keymap(0, "t", "<esc><esc>", [[<C-\><C-n>]], opts)
@@ -64,9 +72,6 @@ end
 local test_servo = Terminal:new({ hidden = false })
 function _TEST_SERVO()
     local cur_buffer_dir = vim.api.nvim_buf_get_name(0)
-    local ending_cmd = " && echo DONE && sleep 1d"
-    local cmd = "./mach test-wpt -d " .. cur_buffer_dir .. ending_cmd
-    test_servo.cmd = cmd
+    test_servo.cmd = wrap_cmd("./mach test-wpt -d " .. cur_buffer_dir)
     test_servo:toggle()
 end
-
