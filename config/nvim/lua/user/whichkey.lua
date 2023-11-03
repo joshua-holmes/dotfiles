@@ -117,6 +117,10 @@ local n_mappings = {
             name = "Servo",
             t = { "<cmd>lua _TEST_SERVO()<CR>", "Run test on current buffer" },
             o = { "<cmd>lua _OPEN_SERVO()<CR>", "Open current buffer in Servo" },
+        },
+        f = {
+            name = "Firefox",
+            o = { "<cmd>lua _OPEN_FIREFOX()<CR>", "Open current buffer in Firefox" },
         }
     },
     b = {

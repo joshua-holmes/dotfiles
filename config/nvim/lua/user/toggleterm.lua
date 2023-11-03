@@ -84,3 +84,10 @@ function _OPEN_SERVO()
         cur_buffer_dir .. " > " .. log_out .. " 2>&1 & sleep 1", true)
     open_servo:toggle()
 end
+
+local open_firefox = Terminal:new({ hidden = true })
+function _OPEN_FIREFOX()
+    local cur_buffer_dir = vim.api.nvim_buf_get_name(0)
+    open_firefox.cmd = wrap_cmd("firefox " .. cur_buffer_dir, true)
+    open_firefox:toggle()
+end
