@@ -79,7 +79,7 @@ end
 local open_servo = Terminal:new({ hidden = false })
 function _OPEN_SERVO()
     local cur_buffer_dir = vim.api.nvim_buf_get_name(0)
-    local log_out = "nohup.out"
+    local log_out = "servo.log"
     open_servo.cmd = wrap_cmd("nohup ./mach run -d --pref layout.flexbox.enabled " ..
         cur_buffer_dir .. " > " .. log_out .. " 2>&1 & sleep 1", true)
     open_servo:toggle()
