@@ -72,7 +72,7 @@ end
 local test_servo = Terminal:new({ hidden = false })
 function _TEST_SERVO()
     local cur_buffer_dir = vim.api.nvim_buf_get_name(0)
-    test_servo.cmd = wrap_cmd("./mach test-wpt -d " .. cur_buffer_dir)
+    test_servo.cmd = wrap_cmd("./mach test-wpt -d -- --pref layout.flexbox.enabled " .. cur_buffer_dir)
     test_servo:toggle()
 end
 
@@ -80,7 +80,7 @@ local open_servo = Terminal:new({ hidden = true })
 function _OPEN_SERVO()
     local cur_buffer_dir = vim.api.nvim_buf_get_name(0)
     local log_out = "servo.log"
-    open_servo.cmd = wrap_cmd("nohup ./mach run -d --pref layout.flexbox.enabled " ..
+    open_servo.cmd = wrap_cmd("nohup ./mach run -d -- --pref layout.flexbox.enabled " ..
         cur_buffer_dir .. " > " .. log_out .. " 2>&1 & sleep 0.1", true)
     open_servo:toggle()
 end
