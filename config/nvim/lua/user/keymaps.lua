@@ -5,10 +5,12 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.keymap.set
 
-if vim.fn.has("linux") then
-    SPECIAL_KEY = "A"
+local os_name = vim.loop.os_uname().sysname
+local is_mac = string.match(string.lower(os_name), "darwin")
+if is_mac then
+    ALT_KEY = "CS"
 else
-    SPECIAL_KEY = "CS"
+    ALT_KEY = "A"
 end
 
 --Remap space as leader key
@@ -42,10 +44,10 @@ keymap("n", "<C-;>", ":split<CR>", opts)
 keymap("n", "<C-'>", ":vsplit<CR>", opts)
 
 -- Resize with arrows
-keymap("n", "<" .. SPECIAL_KEY .. "-k>", ":resize -2<CR>", opts)
-keymap("n", "<" .. SPECIAL_KEY .. "-j>", ":resize +2<CR>", opts)
-keymap("n", "<" .. SPECIAL_KEY .. "-h>", ":vertical resize -2<CR>", opts)
-keymap("n", "<" .. SPECIAL_KEY .. "-l>", ":vertical resize +2<CR>", opts)
+keymap("n", "<" .. ALT_KEY .. "-k>", ":resize -2<CR>", opts)
+keymap("n", "<" .. ALT_KEY .. "-j>", ":resize +2<CR>", opts)
+keymap("n", "<" .. ALT_KEY .. "-h>", ":vertical resize -2<CR>", opts)
+keymap("n", "<" .. ALT_KEY .. "-l>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
