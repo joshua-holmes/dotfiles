@@ -56,6 +56,12 @@ alias gr='python ~/dotfiles/scripts/growthrate.py'
 alias ascii='~/dotfiles/scripts/figlet.sh'
 
 # -----------------------------------------------------
+# VIEW ALIASES
+# -----------------------------------------------------
+
+alias als="cat ~/.bashrc | rg alias"
+
+# -----------------------------------------------------
 # EDIT CONFIG FILES
 # -----------------------------------------------------
 
