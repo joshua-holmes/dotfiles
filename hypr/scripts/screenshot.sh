@@ -9,11 +9,11 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-DIR="$HOME/Pictures/screenshots/"
+DIR="/mnt/HDD-2TB/josh/Pictures/screenshots/"
 NAME="screenshot_$(date +%d%m%Y_%H%M%S).png"
 
 option2="Selected area"
-option3="Fullscreen (delay 3 sec)"
+option3="Fullscreen"
 
 options="$option2\n$option3"
 
@@ -25,7 +25,6 @@ case $choice in
         notify-send "Screenshot created" "Mode: Selected area"
     ;;
     $option3)
-        sleep 3
         grim - | swappy -f -
         notify-send "Screenshot created" "Mode: Fullscreen"
     ;;
