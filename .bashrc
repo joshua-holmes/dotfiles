@@ -14,6 +14,12 @@
 PS1='[\u@\h \W]\$ '
 
 # -----------------------------------------------------
+# VARIALBES
+# -----------------------------------------------------
+
+export PATH="${HOME}/.cargo/bin:${PATH}"
+
+# -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
 
@@ -31,7 +37,7 @@ alias dot="cd ~/dotfiles"
 alias sv="cd ~/Development/projects/servo/ && nvim"
 
 # -----------------------------------------------------
-# Window Managers
+# WINDOW MANAGER
 # -----------------------------------------------------
 
 alias hl="Hyprland"
@@ -78,11 +84,21 @@ alias notes='nvim ~/notes.txt'
 # -----------------------------------------------------
 # PYWAL
 # -----------------------------------------------------
+
 cat ~/.cache/wal/sequences
 
 # -----------------------------------------------------
-# PFETCH if on wm
+# FUNCTIONS
 # -----------------------------------------------------
+
+docker-clean() {
+    docker rm $(docker ps -aq)
+    docker image rm $(docker images -q)
+}
+server() {
+    TERM="xterm" ssh -i ~/.ssh/aws-archy.pem ec2-user@ec2-34-214-8-159.us-west-2.compute.amazonaws.com
+}
+
 echo ""
 if [[ $(tty) == *"pts"* ]]; then
     pfetch
