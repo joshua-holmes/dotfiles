@@ -28,6 +28,7 @@ alias wifi='nmtui'
 alias wr='~/dotfiles/waybar/launch.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
+alias sv="cd ~/Development/projects/servo/ && nvim"
 
 # -----------------------------------------------------
 # Window Managers
@@ -86,5 +87,5 @@ echo ""
 if [[ $(tty) == *"pts"* ]]; then
     pfetch
 else
-    echo "Start Hyprland with command Hyprland"
+    echo "Start Hyprland with command hl"
 fi
