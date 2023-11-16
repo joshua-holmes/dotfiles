@@ -149,7 +149,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "killall pavucontrol || pavucontrol --tab=3"
     },
     "custom/media": {
         "format": "{icon} {}",
