@@ -108,6 +108,13 @@
         "tooltip": false
     },
 
+    // Terminal Emulator
+    "custom/terminal": {
+        "format": "",
+        "on-click": "kitty",
+        "tooltip": false
+    },    
+
     // Filemanager Launcher
     "custom/filemanager": {
         "format": "",
@@ -138,8 +145,8 @@
 
     // Browser Launcher
     "custom/browser": {
-        "format": "",
-        "on-click": "chromium",
+        "format": "🕸",
+        "on-click": "firefox",
         "tooltip": false
     },    
 

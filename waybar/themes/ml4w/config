@@ -62,7 +62,8 @@
         "orientation": "horizontal",
         "modules": [
             "custom/filemanager",
-            "custom/browser"
+            "custom/browser",
+            "custom/terminal"
          ]
     },
 
