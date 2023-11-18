@@ -34,6 +34,7 @@ alias wifi='nmtui'
 alias wr='~/dotfiles/waybar/launch.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
+alias neo="cd ~/.config/nvim"
 alias sv="cd ~/Development/projects/servo/ && nvim"
 
 # -----------------------------------------------------
