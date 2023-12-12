@@ -5,3 +5,7 @@ if [[ -z $(hyprctl monitors | rg "DP-3") ]]; then
 else
     hyprctl keyword monitor DP-3,disabled
 fi
+
+if [[ -z $(ps -A | rg waybar) ]]; then
+    ~/dotfiles/waybar/launch.sh
+fi
