@@ -54,11 +54,6 @@ cp $wallpaper ~/.cache/current_wallpaper.jpg
 newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 
 # ----------------------------------------------------- 
-# Reload waybar with new colors
-# -----------------------------------------------------
-~/dotfiles/waybar/launch.sh
-
-# ----------------------------------------------------- 
 # Set the new wallpaper
 # -----------------------------------------------------
 transition_type="wipe"
@@ -71,6 +66,11 @@ swww img $wallpaper \
     --transition-type=$transition_type \
     --transition-duration=0.7 \
     --transition-pos "$( hyprctl cursorpos )"
+
+# ----------------------------------------------------- 
+# Reload waybar with new colors
+# -----------------------------------------------------
+~/dotfiles/waybar/launch.sh
 
 # ----------------------------------------------------- 
 # Send notification
