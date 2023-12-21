@@ -15,8 +15,7 @@
 # ----------------------------------------------------- 
 # Keyboard Layout
 # -----------------------------------------------------
-hyprctl keyword input:kb_layout de # to de
-# hyprctl keyword input:kb_layout us # to us
+hyprctl keyword input:kb_layout us # to us
 
 # ----------------------------------------------------- 
 # Monitor Setup
