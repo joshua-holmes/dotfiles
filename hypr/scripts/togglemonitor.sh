@@ -1,10 +1,12 @@
 #!/bin/bash
 
 if [[ -z $(hyprctl monitors | rg "DP-3") ]]; then
-    hyprctl keyword monitor DP-3,3440x1440@175,200x1080,auto
+    python ~/dotfiles/hypr/scripts/togglemonitor_script.py enable
 else
-    hyprctl keyword monitor DP-3,disabled
+    python ~/dotfiles/hypr/scripts/togglemonitor_script.py disable
 fi
+
+sleep 5
 
 if [[ -z $(ps -A | rg waybar) ]]; then
     ~/dotfiles/waybar/launch.sh
