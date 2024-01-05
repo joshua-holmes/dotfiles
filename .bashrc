@@ -41,6 +41,7 @@ alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
 alias neo="cd ~/.config/nvim"
 alias sv="cd ~/Development/projects/servo/ && nvim"
+alias vpn="~/dotfiles/scripts/vpn.sh"
 
 # -----------------------------------------------------
 # WINDOW MANAGER
