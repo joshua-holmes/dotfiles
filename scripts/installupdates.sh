@@ -78,4 +78,10 @@ echo ""
 
 yay
 
+echo ""
+echo "Update complete!"
+echo "Press ctrl-C to exit"
 notify-send "Update complete"
+while true; do
+    sleep 1
+done
