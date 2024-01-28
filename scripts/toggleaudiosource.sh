@@ -1,4 +1,4 @@
-hyprx="alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo"
+hyprx="alsa_output.usb-HP__Inc_HyperX_Cloud_II_Wireless_0-00.analog-stereo"
 external_speaker="alsa_output.pci-0000_0a_00.4.analog-stereo"
 
 if [[ $(pactl get-default-sink) = "${hyprx}" ]]; then
