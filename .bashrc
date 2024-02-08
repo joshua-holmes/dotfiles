@@ -100,8 +100,8 @@ cat ~/.cache/wal/sequences
 # -----------------------------------------------------
 
 docker-clean() {
-    docker rm $(docker ps -aq)
-    docker image rm $(docker images -q)
+    docker rm -f $(docker ps -aq)
+    docker image rm -f $(docker images -q)
 }
 vpn-server() {
     TERM="xterm" ssh -i ~/.ssh/vpn.pem openvpnas@ec2-54-241-86-227.us-west-1.compute.amazonaws.com
