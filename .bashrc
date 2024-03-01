@@ -103,11 +103,8 @@ docker-clean() {
     docker rm -f $(docker ps -aq)
     docker image rm -f $(docker images -q)
 }
-vpn-server() {
-    TERM="xterm" ssh -i ~/.ssh/vpn.pem openvpnas@ec2-54-241-86-227.us-west-1.compute.amazonaws.com
-}
-torry-server() {
-    TERM="xterm" ssh -i ~/.ssh/aws-archy.pem admin@ec2-54-176-160-22.us-west-1.compute.amazonaws.com
+server() {
+    ssh -i ~/.ssh/aws-archy.pem admin@ec2-35-86-79-219.us-west-2.compute.amazonaws.com
 }
 
 echo ""
