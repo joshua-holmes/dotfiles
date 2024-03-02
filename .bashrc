@@ -17,6 +17,9 @@ PS1='[\u@\h \W]\$ '
 # VARIALBES
 # -----------------------------------------------------
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 export PATH="${HOME}/.cargo/bin:${PATH}"
 export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:/home/josh/.local/bin:$PATH"
 
