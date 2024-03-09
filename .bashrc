@@ -106,8 +106,8 @@ docker-clean() {
     docker rm -f $(docker ps -aq)
     docker image rm -f $(docker images -q)
 }
-server() {
-    ssh -i ~/.ssh/aws-archy.pem admin@ec2-35-86-79-219.us-west-2.compute.amazonaws.com
+keepass-server() {
+    ssh -i ~/.ssh/keepass.pem admin@ec2-18-237-110-247.us-west-2.compute.amazonaws.com
 }
 
 echo ""
