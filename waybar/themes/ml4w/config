@@ -53,6 +53,7 @@
         "group/hardware",
         "custom/cliphist",
         "network",
+        "bluetooth",
         "custom/exit",
         "clock"
     ],
