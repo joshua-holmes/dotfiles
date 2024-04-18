@@ -14,9 +14,9 @@ case $1 in
     # Load wallpaper from .cache of last session 
     "init")
         if [ -f ~/.cache/current_wallpaper.jpg ]; then
-            wal -q -i ~/.cache/current_wallpaper.jpg
+            ~/dotfiles/hypr/scripts/wal.sh -q -i ~/.cache/current_wallpaper.jpg
         else
-            wal -q -i ~/wallpaper/
+            ~/dotfiles/hypr/scripts/wal.sh -q -i ~/wallpaper/
         fi
     ;;
 
@@ -27,12 +27,12 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i ~/wallpaper/$selected
+        ~/dotfiles/hypr/scripts/wal.sh -q -i ~/wallpaper/$selected
     ;;
 
     # Randomly select wallpaper 
     *)
-        wal -q -i ~/wallpaper/
+        ~/dotfiles/hypr/scripts/wal.sh -q -i ~/wallpaper/
     ;;
 
 esac
@@ -40,6 +40,7 @@ esac
 # ----------------------------------------------------- 
 # Load current pywal color scheme
 # ----------------------------------------------------- 
+source "$HOME/.cache/wal/wallpaper.sh"
 source "$HOME/.cache/wal/colors.sh"
 echo "Wallpaper: $wallpaper"
 
