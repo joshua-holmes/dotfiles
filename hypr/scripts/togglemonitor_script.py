@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, re
 from typing import Tuple
 
 def is_commented_out(line: str) -> bool:
@@ -23,14 +23,14 @@ def get_correct_config_line(lines: str) -> Tuple[int, str | None]:
 
 def disable_monitor(fname: str, index: int, fcontents: str):
     fcontents = "\n".join([
-        l.replace("#", "", 1) if i == index - 1 else l for (i, l) in enumerate(fcontents.splitlines())
+        re.sub(r"#\s*", "", l, count=1) if i == index - 1 else l for (i, l) in enumerate(fcontents.splitlines())
     ]) + "\n"
     with open(fname, "w") as f:
         f.write(fcontents)
 
 def enable_monitor(fname: str, index: int, fcontents: str):
     fcontents = "\n".join([
-        "#" + l if i == index - 1 else l for (i, l) in enumerate(fcontents.splitlines())
+        "# " + l if i == index - 1 else l for (i, l) in enumerate(fcontents.splitlines())
     ]) + "\n"
     with open(fname, "w") as f:
         f.write(fcontents)
