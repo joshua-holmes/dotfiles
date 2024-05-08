@@ -111,7 +111,7 @@ docker-clean() {
 
 echo ""
 if [[ $(tty) == *"pts"* ]]; then
-    fastfetch
+    fastfetch --config ~/.config/fastfetch/bashrc-config.jsonc
 else
     echo "Start Hyprland with command hl"
 fi
