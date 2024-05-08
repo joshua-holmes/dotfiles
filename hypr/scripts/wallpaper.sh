@@ -57,9 +57,9 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 # ----------------------------------------------------- 
 # Set the new wallpaper
 # -----------------------------------------------------
-transition_type="wipe"
+# transition_type="wipe"
 # transition_type="outer"
-# transition_type="random"
+transition_type="random"
 
 swww img $wallpaper \
     --transition-bezier .43,1.19,1,.4 \
