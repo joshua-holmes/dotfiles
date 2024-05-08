@@ -111,6 +111,11 @@ docker-clean() {
 
 echo ""
 if [[ $(tty) == *"pts"* ]]; then
+    # Import colorscheme from 'wal' asynchronously
+    # &   # Run the process in the background.
+    # ( ) # Hide shell job control messages.
+    (cat ~/.cache/wal/sequences &)
+
     fastfetch --config ~/.config/fastfetch/bashrc-config.jsonc
 else
     echo "Start Hyprland with command hl"
