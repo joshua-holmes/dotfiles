@@ -14,9 +14,9 @@ case $1 in
     # Load wallpaper from .cache of last session 
     "init")
         if [ -f ~/.cache/current_wallpaper.jpg ]; then
-            ~/dotfiles/hypr/scripts/wal.sh -q -i ~/.cache/current_wallpaper.jpg
+            wal -q -i ~/.cache/current_wallpaper.jpg
         else
-            ~/dotfiles/hypr/scripts/wal.sh -q -i ~/wallpaper/
+            wal -q -i ~/wallpaper/
         fi
     ;;
 
@@ -27,12 +27,12 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        ~/dotfiles/hypr/scripts/wal.sh -q -i ~/wallpaper/$selected
+        wal -q -i ~/wallpaper/$selected
     ;;
 
     # Randomly select wallpaper 
     *)
-        ~/dotfiles/hypr/scripts/wal.sh -q -i ~/wallpaper/
+        wal -q -i ~/wallpaper/
     ;;
 
 esac
