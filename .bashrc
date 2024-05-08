@@ -35,8 +35,6 @@ export PATH="$PATH:/home/josh/.dotnet/tools"
 # -----------------------------------------------------
 
 alias c='clear'
-alias nf='neofetch'
-alias pf='pfetch'
 alias shutdown='systemctl poweroff'
 alias v='nvim'
 alias ts='~/dotfiles/scripts/snapshot.sh'
@@ -113,7 +111,7 @@ docker-clean() {
 
 echo ""
 if [[ $(tty) == *"pts"* ]]; then
-    pfetch
+    fastfetch
 else
     echo "Start Hyprland with command hl"
 fi
