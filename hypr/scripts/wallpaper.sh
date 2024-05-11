@@ -9,6 +9,8 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
+wallpaper_dir="${HOME}/wallpaper"
+
 case $1 in
 
     # Load wallpaper from .cache of last session 
@@ -16,7 +18,7 @@ case $1 in
         if [ -f ~/.cache/current_wallpaper.jpg ]; then
             wal -q -i ~/.cache/current_wallpaper.jpg
         else
-            wal -q -i ~/wallpaper/
+            wal -q -i "${wallpaper_dir}"
         fi
     ;;
 
@@ -27,12 +29,12 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i ~/wallpaper/$selected
+        wal -q -i "${wallpaper_dir}/${selected}"
     ;;
 
     # Randomly select wallpaper 
     *)
-        wal -q -i ~/wallpaper/
+        wal -q -i "${wallpaper_dir}"
     ;;
 
 esac
