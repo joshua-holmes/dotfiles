@@ -9,7 +9,7 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-wallpaper_dir="/mnt/HDD-2TB/josh/Pictures/wallpaper/oled"
+wallpaper_dir="/mnt/HDD-2TB/josh/Pictures/wallpaper/watercolor"
 
 case $1 in
 
