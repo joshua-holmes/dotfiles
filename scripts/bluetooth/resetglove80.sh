@@ -12,12 +12,13 @@ pid="$(jobs -l | cut -d' ' -f2 | xargs)"
 bluetoothctl disconnect "${glove80_id}"
 bluetoothctl remove "${glove80_id}"
 
-# scan for new connection
-for ((i = 0; i < 3; i++)); do
-    bluetoothctl --timeout "$((timeout + i))" scan on
-    if [[ "$(bluetoothctl devices)" = *"${glove80_id}"* ]]; then
-        break
+# scan for new connection every 3-5 seconds
+while [[ "$(bluetoothctl devices)" != *"${glove80_id}"* ]]; do
+    bluetoothctl --timeout "${timeout}" scan on
+    if ((timeout < 3)); then
+        timeout=$((timeout + 1))
     fi
+    sleep 2
 done
 
 # connect to glove
