@@ -63,6 +63,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 # transition_type="outer"
 transition_type="random"
 
+swww clear
 swww img $wallpaper \
     --transition-bezier .43,1.19,1,.4 \
     --transition-fps=60 \
