@@ -9,7 +9,9 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-wallpaper_dir="/mnt/HDD-2TB/josh/Pictures/wallpaper/watercolor"
+# this env var needs to be set by you somewhere
+# it needs to be the a directory that contains 1 or more images
+wallpaper_dir="${WALLPAPER_DIR}"
 
 case $1 in
 
