@@ -99,6 +99,7 @@ alias notes='nvim ~/notes.txt'
 
 alias keepass-server='TERM=xterm ssh -i ~/.ssh/keepass.pem admin@ec2-18-237-110-247.us-west-2.compute.amazonaws.com'
 alias wireguard-server='TERM=xterm ssh -i ~/.ssh/vpn.pem admin@vpn.holmes-software.com'
+alias skyrim-server='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@skyrim.holmes-software.com'
 
 # -----------------------------------------------------
 # FUNCTIONS
