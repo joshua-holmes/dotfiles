@@ -97,8 +97,8 @@ alias notes='nvim ~/notes.txt'
 # SERVER ACCESS
 # -----------------------------------------------------
 
-alias keepass-server='ssh -i ~/.ssh/keepass.pem admin@ec2-18-237-110-247.us-west-2.compute.amazonaws.com'
-alias wireguard-server='ssh -i ~/.ssh/vpn.pem admin@vpn.holmes-software.com'
+alias keepass-server='TERM=xterm ssh -i ~/.ssh/keepass.pem admin@ec2-18-237-110-247.us-west-2.compute.amazonaws.com'
+alias wireguard-server='TERM=xterm ssh -i ~/.ssh/vpn.pem admin@vpn.holmes-software.com'
 
 # -----------------------------------------------------
 # FUNCTIONS
