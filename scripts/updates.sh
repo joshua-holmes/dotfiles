@@ -15,8 +15,8 @@
 # ----------------------------------------------------- 
 
 threshhold_green=0
-threshhold_yellow=25
-threshhold_red=100
+threshhold_yellow=100
+threshhold_red=200
 
 # ----------------------------------------------------- 
 # Calculate available updates pacman and aur (with trizen)
