@@ -78,7 +78,6 @@ alias ascii='~/dotfiles/scripts/figlet.sh'
 # EDIT CONFIG FILES
 # -----------------------------------------------------
 
-alias confp='nvim ~/dotfiles/picom/picom.conf'
 alias confb='nvim ~/dotfiles/.bashrc'
 
 # -----------------------------------------------------
