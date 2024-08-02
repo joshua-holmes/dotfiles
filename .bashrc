@@ -40,13 +40,12 @@ alias v='nvim'
 alias ts='~/dotfiles/scripts/snapshot.sh'
 alias matrix='cmatrix'
 alias wifi='nmtui'
-alias wr='~/dotfiles/waybar/launch.sh'
+alias wb='~/dotfiles/waybar/launch.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
 alias neo="cd ~/.config/nvim"
-alias rust="nvim ${HOME}/Development/projects/codeforces/problems/test/rust/src/main.rs"
-alias sv="cd ~/Development/projects/servo/ && nvim"
-alias vpn="~/dotfiles/scripts/vpn.sh"
+alias rusty="nvim ${HOME}/dev/test/rust/src/main.rs" # test rust
+alias ziggy="nvim ${HOME}/dev/test/zig/src/main.zig" # test zig
 
 # -----------------------------------------------------
 # WINDOW MANAGER
@@ -61,8 +60,8 @@ alias hl="Hyprland"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m"
-alias gp="git push"
-alias gpl="git pull"
+alias gP="git push"
+alias gp="git pull"
 alias gst="git stash"
 alias gsp="git stash; git pull"
 alias gco="git checkout"
