@@ -75,12 +75,6 @@ alias gr='python ~/dotfiles/scripts/growthrate.py'
 alias ascii='~/dotfiles/scripts/figlet.sh'
 
 # -----------------------------------------------------
-# VIEW ALIASES
-# -----------------------------------------------------
-
-alias als="cat ~/.bashrc | rg alias"
-
-# -----------------------------------------------------
 # EDIT CONFIG FILES
 # -----------------------------------------------------
 
@@ -100,6 +94,7 @@ alias notes='nvim ~/notes.txt'
 alias server-keepass='TERM=xterm ssh -i ~/.ssh/keepass.pem admin@keepass.holmes-software.com'
 alias server-wireguard='TERM=xterm ssh -i ~/.ssh/vpn.pem admin@vpn.holmes-software.com'
 alias server-skyrim='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@skyrim.holmes-software.com'
+alias server-debby='TERM=xterm ssh -i ~/.ssh/id_rsa 192.168.1.69'
 
 # -----------------------------------------------------
 # FUNCTIONS
