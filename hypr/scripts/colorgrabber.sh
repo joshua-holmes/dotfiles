@@ -7,5 +7,5 @@ color=$(hyprpicker --no-fancy)
 wl-copy "${color}"
 
 # notify
-dunstify "\"${color}\" copied to clipboard"
+dunstify "Color Picker" "\"${color}\" copied to clipboard"
 
