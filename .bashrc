@@ -52,6 +52,7 @@ alias ziggy="nvim ${HOME}/dev/test/zig/src/main.zig" # test zig
 # -----------------------------------------------------
 
 alias hl="Hyprland"
+alias xf="startxfce4"
 
 # -----------------------------------------------------
 # GIT
@@ -113,4 +114,5 @@ if [[ $(tty) == *"pts"* ]]; then
     fastfetch --config ~/.config/fastfetch/bashrc-config.jsonc
 else
     echo "Start Hyprland with command hl"
+    echo "Start xfce4 with command xf"
 fi
