@@ -13,12 +13,19 @@
 # it needs to be the a directory that contains 1 or more images
 wallpaper_dir="${WALLPAPER_DIR}"
 
+img_cache="${HOME}/.cache/current_wallpaper.jpg"
+
+get_remote_img() {
+    remote_url="https://picsum.photos/3440/1440"
+    wget -qO "${img_cache}" "${remote_url}"
+}
+
 case $1 in
 
     # Load wallpaper from .cache of last session 
     "init")
-        if [ -f ~/.cache/current_wallpaper.jpg ]; then
-            wal -q -i ~/.cache/current_wallpaper.jpg
+        if [ -f "${img_cache}" ]; then
+            wal -q -i "${img_cache}"
         else
             wal -q -i "${wallpaper_dir}"
         fi
@@ -32,6 +39,12 @@ case $1 in
             exit
         fi
         wal -q -i "${wallpaper_dir}/${selected}"
+    ;;
+
+    # Fetch wallpaper from online
+    "remote")
+        get_remote_img
+        wal -q -i "${img_cache}"
     ;;
 
     # Randomly select wallpaper 
@@ -51,7 +64,7 @@ echo "Wallpaper: $wallpaper"
 # ----------------------------------------------------- 
 # Copy selected wallpaper into .cache folder
 # ----------------------------------------------------- 
-cp $wallpaper ~/.cache/current_wallpaper.jpg
+cp $wallpaper "${img_cache}"
 
 # ----------------------------------------------------- 
 # get wallpaper iamge name
