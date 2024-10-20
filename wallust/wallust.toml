@@ -1,0 +1,8 @@
+backend = "wal"
+
+[templates]
+hyprland = { template = 'colors-hyprland.conf', target = '~/.cache/wallust/colors-hyprland.conf' }
+waybar = { template = 'colors-waybar.css', target = '~/.cache/wallust/colors-waybar.css' }
+wlogout = { template = 'colors-wlogout.css', target = '~/.cache/wallust/colors-wlogout.css' }
+rofi = { template = 'colors-rofi.rasi', target = '~/.cache/wallust/colors-rofi.rasi' }
+sh = { template = 'colors.sh', target = '~/.cache/wallust/colors.sh' }

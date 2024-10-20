@@ -20,14 +20,19 @@ get_remote_img() {
     wget -qO "${img_cache}" "${remote_url}"
 }
 
+get_random_img() {
+    random_img="$(ls -d "${wallpaper_dir}/"*.* | shuf -n 1)"
+}
+
 case $1 in
 
     # Load wallpaper from .cache of last session 
     "init")
         if [ -f "${img_cache}" ]; then
-            wal -q -i "${img_cache}"
+            wallust run "${img_cache}"
         else
-            wal -q -i "${wallpaper_dir}"
+            get_random_img
+            wallust run "${random_img}"
         fi
     ;;
 
@@ -38,18 +43,19 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        wal -q -i "${wallpaper_dir}/${selected}"
+        wallust run "${wallpaper_dir}/${selected}"
     ;;
 
     # Fetch wallpaper from online
     "remote")
         get_remote_img
-        wal -q -i "${img_cache}"
+        wallust run "${img_cache}"
     ;;
 
     # Randomly select wallpaper 
     *)
-        wal -q -i "${wallpaper_dir}"
+        get_random_img
+        wallust run "${random_img}"
     ;;
 
 esac
@@ -57,7 +63,7 @@ esac
 # ----------------------------------------------------- 
 # Load current pywal color scheme
 # ----------------------------------------------------- 
-source "$HOME/.cache/wal/colors.sh"
+source "$HOME/.cache/wallust/colors.sh"
 echo "Wallpaper: $wallpaper"
 
 # ----------------------------------------------------- 
