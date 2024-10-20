@@ -57,7 +57,6 @@ esac
 # ----------------------------------------------------- 
 # Load current pywal color scheme
 # ----------------------------------------------------- 
-source "$HOME/.cache/wal/wallpaper.sh"
 source "$HOME/.cache/wal/colors.sh"
 echo "Wallpaper: $wallpaper"
 
