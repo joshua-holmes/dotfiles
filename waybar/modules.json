@@ -74,14 +74,14 @@
         "tooltip": false
     },
 
-    // Updates Count
+    // Updates Count (restart-interval in seconds)
     "custom/updates": {
         "format": "  {}",
         "tooltip-format": "{}",
         "escape": true,
         "return-type": "json",       
         "exec": "~/dotfiles/scripts/updates.sh",
-        "restart-interval": 60,
+        "restart-interval": 3600,
         "on-click": "kitty ~/dotfiles/scripts/installupdates.sh",
         "tooltip": false
     },
