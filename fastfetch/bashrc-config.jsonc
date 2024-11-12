@@ -7,7 +7,6 @@
         "os",
         "wm",
         "kernel",
-        "publicip",
         "localip",
         "colors"
     ]
