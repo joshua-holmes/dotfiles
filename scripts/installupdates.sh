@@ -7,7 +7,7 @@
 #                                    |_|                              
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
-# Required: yay trizen timeshift btrfs-grub
+# Required: timeshift btrfs-grub
 # ----------------------------------------------------- 
 
 sleep 1
@@ -23,9 +23,9 @@ cat <<"EOF"
 
 EOF
 
-_isInstalledYay() {
+_isInstalledParu() {
     package="$1";
-    check="$(yay -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+    check="$(paru -Qs --color always "${package}" | grep "local" | grep "${package} ")";
     if [ -n "${check}" ] ; then
         echo 0; #'0' means 'true' in Bash
         return; #true
@@ -51,7 +51,7 @@ while true; do
     esac
 done
 
-if [[ $(_isInstalledYay "Timeshift") == 1 ]];
+if [[ $(_isInstalledParu "Timeshift") == 1 ]];
 then
     while true; do
         read -p "DO YOU WANT TO CREATE A SNAPSHOT? (Yy/Nn): " yn
@@ -76,7 +76,7 @@ echo "Start update"
 echo "-----------------------------------------------------"
 echo ""
 
-yay
+paru
 
 echo ""
 echo "Update complete!"

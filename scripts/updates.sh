@@ -8,7 +8,7 @@
 #  
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
-# Requires pacman-contrib trizen
+# Requires pacman-contrib paru
 
 # ----------------------------------------------------- 
 # Define threshholds for color indicators
@@ -19,14 +19,14 @@ threshhold_yellow=100
 threshhold_red=200
 
 # ----------------------------------------------------- 
-# Calculate available updates pacman and aur (with trizen)
+# Calculate available updates pacman and aur (with paru)
 # ----------------------------------------------------- 
 
 if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
     updates_arch=0
 fi
 
-if ! updates_aur=$(yay -Su --aur --quiet | wc -l); then
+if ! updates_aur=$(paru -Su --aur --quiet | wc -l); then
     updates_aur=0
 fi
 

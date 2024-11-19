@@ -9,7 +9,7 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-yay -Scc
+paru -Scc
 su -c 'pacman -Qtdq | pacman -Rns -'
 su -c 'pacman -Qqd | pacman -Rsu -'
 
