@@ -26,11 +26,13 @@ if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
     updates_arch=0
 fi
 
-if ! updates_aur=$(paru -Su --aur --quiet | wc -l); then
-    updates_aur=0
-fi
-
-updates=$(("$updates_arch" + "$updates_aur"))
+# Don't count aur upgrades cause it doesn't work with paru and I don't care that much.
+# if ! updates_aur=$(paru -Su --aur --quiet | wc -l); then
+#     updates_aur=0
+# fi
+#
+# updates=$(("$updates_arch" + "$updates_aur"))
+updates="${updates_arch}"
 
 # ----------------------------------------------------- 
 # Testing
