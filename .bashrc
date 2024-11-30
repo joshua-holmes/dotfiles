@@ -44,6 +44,7 @@ alias wb='~/dotfiles/waybar/launch.sh'
 alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
 alias neo="cd ~/.config/nvim"
+alias llm="~/dotfiles/scripts/llm.sh"
 alias rusty="cd ${HOME}/dev/test/rust/ && nvim src/main.rs" # test rust
 alias ziggy="cd ${HOME}/dev/test/zig/ && nvim src/main.zig" # test zig
 alias pythony="cd ${HOME}/dev/test/python/ && nvim main.py" # test python
