@@ -21,7 +21,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 export PATH="${HOME}/.cargo/bin:${PATH}"
-export PATH="$GEM_HOME/bin:$HOME/.rvm/bin:/home/josh/.local/bin:$PATH"
+export PATH="/home/josh/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
