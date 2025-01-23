@@ -30,8 +30,6 @@ export NVM_DIR="$HOME/.nvm"
 # Add .NET Core SDK tools
 export PATH="$PATH:/home/josh/.dotnet/tools"
 
-source /opt/intel/oneapi/setvars.sh
-
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
