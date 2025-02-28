@@ -53,7 +53,6 @@ alias llm="~/dotfiles/scripts/llm.sh"
 alias rusty="cd ${HOME}/dev/test/rust/ && nvim src/main.rs" # test rust
 alias ziggy="cd ${HOME}/dev/test/zig/ && nvim src/main.zig" # test zig
 alias pythony="cd ${HOME}/dev/test/python/ && nvim main.py" # test python
-alias nvim='env OPENAI_API_KEY=${OPENAI_API_KEY} nvim'
 
 # -----------------------------------------------------
 # WINDOW MANAGER
@@ -102,7 +101,6 @@ alias server-keepass='TERM=xterm ssh -i ~/.ssh/keepass.pem admin@keepass.holmes-
 alias server-wireguard='TERM=xterm ssh -i ~/.ssh/vpn.pem admin@vpn.holmes-software.com'
 alias server-immich='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@immich.holmes-software.com'
 alias server-debby='TERM=xterm ssh 192.168.1.69'
-alias server-mini='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@35.95.241.44'
 
 # -----------------------------------------------------
 # FUNCTIONS
