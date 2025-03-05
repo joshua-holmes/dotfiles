@@ -103,6 +103,7 @@ alias server-keepass='TERM=xterm ssh -i ~/.ssh/keepass.pem admin@keepass.holmes-
 alias server-wireguard='TERM=xterm ssh -i ~/.ssh/vpn.pem admin@vpn.holmes-software.com'
 alias server-immich='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@immich.holmes-software.com'
 alias server-debby='TERM=xterm ssh 192.168.1.69'
+alias server-mini='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@mini.holmes-software.com'
 
 # -----------------------------------------------------
 # FUNCTIONS
