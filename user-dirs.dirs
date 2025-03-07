@@ -1,0 +1,15 @@
+# This file is written by xdg-user-dirs-update
+# If you want to change or add directories, just edit the line you're
+# interested in. All local changes will be retained on the next run.
+# Format is XDG_xxx_DIR="$HOME/yyy", where yyy is a shell-escaped
+# homedir-relative path, or XDG_xxx_DIR="/yyy", where /yyy is an
+# absolute path. No other format is supported.
+# 
+XDG_DESKTOP_DIR="/mnt/hdd/josh/desktop/"
+XDG_DOWNLOAD_DIR="/mnt/hdd/josh/downloads/"
+XDG_TEMPLATES_DIR="/mnt/hdd/josh/templates/"
+XDG_PUBLICSHARE_DIR="/mnt/hdd/josh/pubshare/"
+XDG_DOCUMENTS_DIR="/mnt/hdd/josh/documents/"
+XDG_MUSIC_DIR="/mnt/hdd/josh/music/"
+XDG_PICTURES_DIR="/mnt/hdd/josh/pictures/"
+XDG_VIDEOS_DIR="/mnt/hdd/josh/videos/"
