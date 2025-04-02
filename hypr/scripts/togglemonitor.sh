@@ -1,13 +1,16 @@
 #!/bin/bash
+#  _____                 _        _   _ ____  ____  
+# |_   _|__   __ _  __ _| | ___  | | | |  _ \|  _ \ 
+#   | |/ _ \ / _` |/ _` | |/ _ \ | |_| | | | | |_) |
+#   | | (_) | (_| | (_| | |  __/ |  _  | |_| |  _ < 
+#   |_|\___/ \__, |\__, |_|\___| |_| |_|____/|_| \_\
+#            |___/ |___/                            
 
-if [[ -z $(hyprctl monitors | rg "DP-3") ]]; then
-    python ~/dotfiles/hypr/scripts/togglemonitor_script.py enable
+file="${HOME}/dotfiles/hypr/conf/monitor.conf"
+if grep -q '^#.*monitor=DP-3,disabled' "$file"; then
+    # Uncomment the line
+    sed -i '/monitor=DP-3,disabled/s/^#//' "$file"
 else
-    python ~/dotfiles/hypr/scripts/togglemonitor_script.py disable
-fi
-
-sleep 5
-
-if [[ -z $(ps -A | rg waybar) ]]; then
-    ~/dotfiles/waybar/launch.sh
+    # Comment out the line
+    sed -i '/monitor=DP-3,disabled/s/^/#/' "$file"
 fi
