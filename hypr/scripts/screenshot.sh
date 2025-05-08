@@ -11,19 +11,30 @@
 
 NAME="screenshot_$(date +%d%m%Y_%H%M%S).png"
 
-option2="Selected area"
-option3="Fullscreen"
+option1="Selected area"
+option2="Fullscreen"
+options="${option1}\n${option2}"
 
-options="$option2\n$option3"
+waitOption1="Instant"
+waitOption2="Wait 3 seconds"
+waitOptions="${waitOption1}\n${waitOption2}"
 
 choice=$(echo -e "$options" | rofi -dmenu -replace -config ~/dotfiles/rofi/config-screenshot.rasi -i -no-show-icons -l 2 -width 30 -p "Take Screenshot")
 
+waitChoice=$(echo -e "$waitOptions" | rofi -dmenu -replace -config ~/dotfiles/rofi/config-screenshot.rasi -i -no-show-icons -l 2 -width 30 -p "Wait interval")
+
+case $waitChoice in
+    $waitOption2)
+        sleep 3
+    ;;
+esac
+
 case $choice in
-    $option2)
+    $option1)
         grim -g "$(slurp)" - | swappy -f -
         notify-send "Screenshot created" "Mode: Selected area"
     ;;
-    $option3)
+    $option2)
         grim - | swappy -f -
         notify-send "Screenshot created" "Mode: Fullscreen"
     ;;
