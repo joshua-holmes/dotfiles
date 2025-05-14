@@ -131,7 +131,7 @@
     // Browser Launcher
     "custom/browser": {
         "format": "🕸",
-        "on-click": "zen-browser",
+        "on-click": "firefox",
         "tooltip": false
     },    
 
