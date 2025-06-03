@@ -131,7 +131,7 @@
     // Browser Launcher
     "custom/browser": {
         "format": "🕸",
-        "on-click": "firefox",
+        "on-click": "GTK_THEME= zen-browser",
         "tooltip": false
     },    
 
