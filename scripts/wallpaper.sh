@@ -9,9 +9,8 @@
 # by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
-# this env var needs to be set by you somewhere
-# it needs to be the a directory that contains 1 or more images
-wallpaper_dir="${WALLPAPER_DIR}"
+# needs to be the a directory that contains 1 or more images
+wallpaper_dir="/mnt/hdd/pictures/wallpaper/from-reddit"
 
 img_cache="${HOME}/.cache/current_wallpaper.jpg"
 
@@ -72,11 +71,6 @@ echo "Wallpaper: $wallpaper"
 cp $wallpaper "${img_cache}"
 
 # ----------------------------------------------------- 
-# get wallpaper iamge name
-# ----------------------------------------------------- 
-newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
-
-# ----------------------------------------------------- 
 # Set the new wallpaper
 # -----------------------------------------------------
 # transition_type="wipe"
@@ -100,6 +94,6 @@ swww img $wallpaper \
 # Send notification
 # ----------------------------------------------------- 
 sleep 1
-notify-send "Colors and Wallpaper updated" "with image $newwall"
+notify-send "Colors and Wallpaper updated" "with image $wallpaper"
 
 echo "DONE!"

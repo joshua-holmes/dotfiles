@@ -19,7 +19,6 @@ PS1='[\u@\h \W]\$ '
 
 export EDITOR=nvim
 export VISUAL=nvim
-export WALLPAPER_DIR="/mnt/hdd/pictures/wallpaper/from-reddit"
 
 export PATH="${HOME}/.cargo/bin:${PATH}"
 export PATH="/home/josh/.local/bin:$PATH"
