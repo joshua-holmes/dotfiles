@@ -25,9 +25,8 @@ export PATH="/home/josh/.local/bin:$PATH"
 
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source "$HOME/.cargo/env"
+eval "$(fnm env --use-on-cd --shell bash)"
 
 # Add .NET Core SDK tools
 export PATH="$PATH:/home/josh/.dotnet/tools"
@@ -54,6 +53,9 @@ alias llm="~/dotfiles/scripts/llm.sh"
 alias rusty="cd ${HOME}/dev/test/rust/ && nvim src/main.rs" # test rust
 alias ziggy="cd ${HOME}/dev/test/zig/ && nvim src/main.zig" # test zig
 alias pythony="cd ${HOME}/dev/test/python/ && nvim main.py" # test python
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 
 # -----------------------------------------------------
 # WINDOW MANAGER
@@ -98,11 +100,9 @@ alias notes='nvim ~/notes.txt'
 # SERVER ACCESS
 # -----------------------------------------------------
 
-alias server-keepass='TERM=xterm ssh -i ~/.ssh/keepass.pem admin@keepass.holmes-software.com'
-alias server-wireguard='TERM=xterm ssh -i ~/.ssh/vpn.pem admin@vpn.holmes-software.com'
-alias server-immich='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@immich.holmes-software.com'
+alias server-keepass='TERM=xterm ssh -i ~/.ssh/aws-archy admin@keepass.holmes-software.com'
 alias server-debby='TERM=xterm ssh 192.168.1.69'
-alias server-mini='TERM=xterm ssh -i ~/.ssh/aws-archy.pem admin@mini.holmes-software.com'
+alias server-mini='TERM=xterm ssh -i ~/.ssh/aws-archy admin@mini.holmes-software.com'
 
 # -----------------------------------------------------
 # FUNCTIONS
