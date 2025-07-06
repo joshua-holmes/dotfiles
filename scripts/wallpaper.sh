@@ -68,7 +68,7 @@ echo "Wallpaper: $wallpaper"
 # ----------------------------------------------------- 
 # Copy selected wallpaper into .cache folder
 # ----------------------------------------------------- 
-cp $wallpaper "${img_cache}"
+cp "${wallpaper}" "${img_cache}"
 
 # ----------------------------------------------------- 
 # Set the new wallpaper
@@ -78,7 +78,7 @@ cp $wallpaper "${img_cache}"
 transition_type="random"
 
 swww clear
-swww img $wallpaper \
+swww img "${wallpaper}" \
     --transition-bezier .43,1.19,1,.4 \
     --transition-fps=60 \
     --transition-type=$transition_type \
@@ -88,7 +88,7 @@ swww img $wallpaper \
 # ----------------------------------------------------- 
 # Reload waybar with new colors
 # -----------------------------------------------------
-~/dotfiles/waybar/launch.sh
+~/dotfiles/waybar/scripts/launch.sh
 
 # ----------------------------------------------------- 
 # Send notification
