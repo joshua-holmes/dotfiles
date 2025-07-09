@@ -13,11 +13,20 @@
 # by Joshua Holmes (2025) 
 # ----------------------------------------------------- 
 
+# signal chosen from ~/dotfiles/waybar/config to trigger waybar update
+signal_from_config=2
+
+# number retrieved from `kill -l`
+SIGRTMIN=34
+
+# calculated signal to actually send to waybar
+signal="$(( "${signal_from_config}" + "${SIGRTMIN}" ))"
+
 unpause() {
     dunstctl set-paused false && dunstify "dunst" "Unpausing noties"
 }
 pause() {
-    dunstify "dunst" "Pausing noties" && sleep 1 && dunstctl set-paused true
+    dunstctl set-paused true
 }
 
 if [[ $(dunstctl get-pause-level) == 0 ]]; then
@@ -25,3 +34,7 @@ if [[ $(dunstctl get-pause-level) == 0 ]]; then
 else
     unpause
 fi
+
+waybar_pid="$(ps | rg waybar | cut -d' ' -f3)"
+
+kill -n "${signal}" "${waybar_pid}"

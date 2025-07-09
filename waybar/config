@@ -17,9 +17,11 @@
         },
         "custom/notification": {
             "tooltip": false,
-            "format": "",
-            "on-click": "swaync-client -t -sw",
-            "escape": true
+            "format": "{}",
+            "format-alt": "{}",
+            "exec": "[[ $(dunstctl get-pause-level) == 0 ]] && echo '' || echo '✖'",
+            "signal": 2,
+            "on-click": "~/dotfiles/scripts/togglenotifications.sh"
         },
         "clock": {
             "format": " {:%I:%M %p | %b %d}",
