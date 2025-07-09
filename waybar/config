@@ -13,15 +13,16 @@
                 "active": "",
                 "default": "",
                 "empty": ""
-            },
+            }
         },
         "custom/notification": {
             "tooltip": false,
             "format": "",
-            "on-click": "~/dotfiles/scripts/togglenotifications.sh",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
         },
         "clock": {
-            "format": "{:%I:%M %p} ",
+            "format": " {:%I:%M %p | %b %d}",
             "interval": 1,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
@@ -78,9 +79,9 @@
         "custom/pacman": {
             "format": "󰅢 {}",
             "interval": 30,   
-            "exec": "checkupdates | wc -l",
+            "exec": "paru -Qu | wc -l",
             "exec-if": "exit 0",
-            "on-click": "ghostty -e 'paru -Syu; echo Done - Press enter to exit; read'",
+            "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
             "signal": 8,
             "tooltip": false,
         },

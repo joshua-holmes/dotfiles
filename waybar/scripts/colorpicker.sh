@@ -36,7 +36,7 @@ EOF
 }
 
 check hyprpicker || {
-  notify "hyprpicker is not installed"
+  dunstify "hyprpicker is not installed"
   exit
 }
 killall -q hyprpicker
