@@ -35,6 +35,6 @@ else
     unpause
 fi
 
-waybar_pid="$(ps | rg waybar | cut -d' ' -f3)"
+waybar_pid="$(pgrep waybar)"
 
 kill -n "${signal}" "${waybar_pid}"
