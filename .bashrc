@@ -62,7 +62,7 @@ alias grep='grep --color=auto'
 # -----------------------------------------------------
 
 alias hl="Hyprland"
-alias xf="startxfce4"
+alias st="ENABLE_HDR_WSI=1 DXVK_HDR=1 gamescope --hdr-enabled -e -- steam -gamepadui"
 
 # -----------------------------------------------------
 # GIT
