@@ -123,5 +123,5 @@ if [[ $(tty) == *"pts"* ]]; then
     fastfetch --config ~/.config/fastfetch/bashrc-config.jsonc
 else
     echo "Start Hyprland with command hl"
-    echo "Start xfce4 with command xf"
+    echo "Start Steam in gamepad mode with command st"
 fi
