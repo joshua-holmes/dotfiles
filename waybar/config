@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","clock","tray"],
+        "modules-left": ["custom/notification","clock","custom/pacman","tray"],
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["group/expand","pulseaudio","bluetooth","network","battery"],
 
@@ -25,7 +25,7 @@
         },
         "clock": {
             "format": " {:%I:%M %p | %b %d}",
-            "interval": 1,   
+            "interval": 60,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
                 "format": {
@@ -96,10 +96,10 @@
         },
         "custom/pacman": {
             "format": "󰅢 {}",
-            "interval": 30,   
-            "exec": "paru -Qu | wc -l",
+            "interval": 3600,   
+            "exec": "~/dotfiles/waybar/scripts/checkupdates.sh",
             "exec-if": "exit 0",
-            "on-click": "ghostty -e 'paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "on-click": "~/dotfiles/waybar/scripts/checkupdates.sh --update",
             "signal": 8,
             "tooltip": false,
         },
