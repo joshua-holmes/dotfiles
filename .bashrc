@@ -115,10 +115,11 @@ docker-clean() {
 
 echo ""
 if [[ $(tty) == *"pts"* ]]; then
-    # Import colorscheme from 'wal' asynchronously
+    # Import colorscheme from 'wallust' asynchronously
     # &   # Run the process in the background.
     # ( ) # Hide shell job control messages.
-    (cat ~/.cache/wallust/sequences &)
+    # NOTE: commented out for now because the term theme colors are too close to bg color
+    # (cat ~/.cache/wallust/sequences &)
 
     fastfetch --config ~/.config/fastfetch/bashrc-config.jsonc
 else

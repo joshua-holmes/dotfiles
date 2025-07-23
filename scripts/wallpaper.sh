@@ -28,10 +28,10 @@ case $1 in
     # Load wallpaper from .cache of last session 
     "init")
         if [ -f "${img_cache}" ]; then
-            wallust run "${img_cache}"
+            wallust --skip-sequences run "${img_cache}"
         else
             get_random_img
-            wallust run "${random_img}"
+            wallust --skip-sequences run "${random_img}"
         fi
     ;;
 
@@ -42,19 +42,19 @@ case $1 in
             echo "No wallpaper selected"
             exit
         fi
-        wallust run "${wallpaper_dir}/${selected}"
+        wallust --skip-sequences run "${wallpaper_dir}/${selected}"
     ;;
 
     # Fetch wallpaper from online
     "remote")
         get_remote_img
-        wallust run "${img_cache}"
+        wallust --skip-sequences run "${img_cache}"
     ;;
 
     # Randomly select wallpaper 
     *)
         get_random_img
-        wallust run "${random_img}"
+        wallust --skip-sequences run "${random_img}"
     ;;
 
 esac
