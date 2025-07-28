@@ -9,8 +9,8 @@
 file="${HOME}/dotfiles/hypr/conf/monitor.conf"
 if grep -q '^#.*monitor=DP-3,disabled' "$file"; then
     # Uncomment the line
-    sed -i '/monitor=DP-3,disabled/s/^#//' "$file"
+    sed -i '/monitor=DP-3,disabled/s/^# //' "$file"
 else
     # Comment out the line
-    sed -i '/monitor=DP-3,disabled/s/^/#/' "$file"
+    sed -i '/monitor=DP-3,disabled/s/^/# /' "$file"
 fi
