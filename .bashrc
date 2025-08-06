@@ -126,3 +126,8 @@ else
     echo "Start Hyprland with command hl"
     echo "Start Steam in gamepad mode with command st"
 fi
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"
