@@ -62,7 +62,7 @@ alias grep='grep --color=auto'
 # -----------------------------------------------------
 
 alias hl="Hyprland"
-alias st="ENABLE_HDR_WSI=1 DXVK_HDR=1 gamescope --hdr-enabled -e -- steam -gamepadui"
+alias st="ENABLE_HDR_WSI=1 DXVK_HDR=1 gamescope --hdr-enabled --prefer-output DP-3 -w 3440 -h 1440 -e -- steam -gamepadui"
 
 # -----------------------------------------------------
 # GIT
@@ -100,8 +100,8 @@ alias notes='nvim ~/notes.txt'
 # SERVER ACCESS
 # -----------------------------------------------------
 
-alias server-keepass='TERM=xterm ssh -i ~/.ssh/aws-archy admin@keepass.holmes-software.com'
-alias server-debby='TERM=xterm ssh 192.168.1.69'
+alias server-keepass='TERM=xterm ssh -i ~/.ssh/aws-archy keepass@keepass.holmes-software.com'
+alias server-debby='TERM=xterm ssh -i ~/.ssh/id_rsa 192.168.1.69'
 alias server-mini='TERM=xterm ssh -i ~/.ssh/aws-archy admin@mini.holmes-software.com'
 
 # -----------------------------------------------------
