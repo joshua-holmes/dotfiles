@@ -10,7 +10,8 @@ cache_timeout_sec=3600
 signal=8
 
 checkupdates() {
-  paru -Qu | wc -l
+  paru -Syy &> /dev/null # refresh database
+  paru -Qu | wc -l # get results
 }
 
 get_cache_line() {
