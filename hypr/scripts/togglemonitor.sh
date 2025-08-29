@@ -7,10 +7,14 @@
 #            |___/ |___/                            
 
 file="${HOME}/dotfiles/hypr/conf/monitor.conf"
-if grep -q '^#.*monitor=DP-3,disabled' "$file"; then
-    # Uncomment the line
-    sed -i '/monitor=DP-3,disabled/s/^# //' "$file"
+
+# Check if the disabled line is currently commented out (inactive)
+if grep -q '^\s*#.*disabled = true' "$file"; then
+    # Uncomment the line (enable the disabled setting)
+    sed -i 's/^\(\s*\)#\s*\(disabled = true\)/\1\2/' "$file"
+    echo "Monitor disabled (uncommented 'disabled = true')"
 else
-    # Comment out the line
-    sed -i '/monitor=DP-3,disabled/s/^/# /' "$file"
+    # Comment out the line (disable the disabled setting, effectively enabling monitor)
+    sed -i 's/^\(\s*\)\(disabled = true\)/\1# \2/' "$file"
+    echo "Monitor enabled (commented out 'disabled = true')"
 fi
