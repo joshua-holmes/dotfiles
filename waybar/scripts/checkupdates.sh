@@ -10,8 +10,12 @@ cache_timeout_sec=3600
 signal=8
 
 checkupdates() {
-  paru -Syy &> /dev/null # refresh database
-  paru -Qu | wc -l # get results
+  # check for updates
+  # NOTE: this line needs to be run somewhere else as root on a regular basis, e.i. via cron
+  # # paru -Syy
+
+  # get results
+  paru -Qu | wc -l
 }
 
 get_cache_line() {
