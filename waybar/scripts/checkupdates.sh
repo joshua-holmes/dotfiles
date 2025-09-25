@@ -29,7 +29,7 @@ if [[ "${1}" = "--help" || "${1}" = "-h" ]]; then
 fi
 
 if [[ "${1}" = "--update" || "${1}" = "-u" ]]; then
-  ghostty -e "paru -Syu && rm ${cache}; echo Done - Press enter to exit; read"
+  ghostty -e bash -c "paru -Syu && rm ${cache}; echo Done - Press enter to exit; read"
   pkill "-SIGRTMIN+${signal}" waybar
   exit
 fi
