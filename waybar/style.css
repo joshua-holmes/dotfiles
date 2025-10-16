@@ -32,7 +32,7 @@ tooltip {
     background:@background;
     color: @color7;
 }
-#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#pulseaudio:hover{
+#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover,#pulseaudio:hover,#tray:hover,#custom-network-status{
     transition: all .3s ease;
     color:@color9;
 }
@@ -92,21 +92,14 @@ tooltip {
     margin: 0 5px;
     transition: all .3s ease;
     color:@color7;
-
 }
-#network{
-    padding-right: 10px;
+#battery,#pulseaudio,#network,#custom-network-status{
     margin: 0 10px;
     transition: all .3s ease;
     color:@color7;
-
 }
-#battery{
-    margin: 0 10px;
-    transition: all .3s ease;
-    color:@color7;
-
-
+#network {
+    padding-right: 5px;
 }
 #battery.charging {
     color: #26A65B;
@@ -155,7 +148,6 @@ tooltip {
 #tray{
     padding: 0px 5px;
     transition: all .3s ease; 
-
 }
 #tray menu * {
     padding: 0px 5px;
@@ -165,8 +157,4 @@ tooltip {
 #tray menu separator {
     padding: 0px 5px;
     transition: all .3s ease; 
-}
-
-#pulseaudio {
-    margin: 0 10px;
 }
