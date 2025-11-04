@@ -1,6 +1,6 @@
 [Added Associations]
 application/zip=org.kde.ark.desktop;
-text/plain=nvim-2.desktop;
+text/plain=nvim-2.desktop;nvim.desktop;
 text/x-log=nvim.desktop;
 
 [Default Applications]
@@ -69,7 +69,7 @@ text/enriched=org.kde.kwrite.desktop;
 text/html=firefox.desktop
 text/htmlh=org.kde.kwrite.desktop;
 text/markdown=okularApplication_md.desktop;
-text/plain=nvim-2.desktop;
+text/plain=nvim.desktop
 text/rfc822-headers=org.kde.kwrite.desktop;
 text/richtext=org.kde.kwrite.desktop;
 text/rust=org.kde.kwrite.desktop;
