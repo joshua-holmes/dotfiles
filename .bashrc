@@ -35,24 +35,22 @@ if [[ -f "${HOME}/.secrets" ]]; then
     source "${HOME}/.secrets"
 fi
 
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"
+
 # -----------------------------------------------------
 # ALIASES
 # -----------------------------------------------------
 
-alias c='clear'
 alias shutdown='systemctl poweroff'
-alias v='nvim'
-alias ts='~/dotfiles/scripts/snapshot.sh'
-alias matrix='cmatrix'
-alias wifi='nmtui'
 alias wb='~/dotfiles/waybar/launch.sh'
-alias winclass="xprop | grep 'CLASS'"
-alias dot="cd ~/dotfiles"
-alias neo="cd ~/.config/nvim"
-alias llm="~/dotfiles/scripts/llm.sh"
-alias rusty="cd ${HOME}/dev/test/rust/ && nvim src/main.rs" # test rust
-alias ziggy="cd ${HOME}/dev/test/zig/ && nvim src/main.zig" # test zig
-alias pythony="cd ${HOME}/dev/test/python/ && nvim main.py" # test python
+alias dot="nvim ~/dotfiles"
+alias neo="nvim ~/.config/nvim"
+alias rusty="cd ${HOME}/dev/test/rust/" # test rust
+alias ziggy="cd ${HOME}/dev/test/zig/" # test zig
+alias pythony="cd ${HOME}/dev/test/python/" # test python
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
@@ -73,8 +71,6 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gP="git push"
 alias gp="git pull"
-alias gst="git stash"
-alias gsp="git stash; git pull"
 alias gco="git checkout"
 
 # -----------------------------------------------------
@@ -89,12 +85,13 @@ alias ascii='~/dotfiles/scripts/figlet.sh'
 # -----------------------------------------------------
 
 alias confb='nvim ~/dotfiles/.bashrc'
+alias confm='nvim ~/dotfiles/hypr/conf/monitor.conf'
 
 # -----------------------------------------------------
 # EDIT NOTES
 # -----------------------------------------------------
 
-alias notes='nvim ~/notes.txt'
+alias resume='nvim ~/dev/notes/resume.md'
 
 # -----------------------------------------------------
 # SERVER ACCESS
@@ -127,8 +124,3 @@ else
     echo "Start Hyprland with command hl"
     echo "Start Steam in gamepad mode with command st"
 fi
-
-# ZVM
-export ZVM_INSTALL="$HOME/.zvm/self"
-export PATH="$PATH:$HOME/.zvm/bin"
-export PATH="$PATH:$ZVM_INSTALL/"
