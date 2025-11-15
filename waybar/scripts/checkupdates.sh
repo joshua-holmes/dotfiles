@@ -6,7 +6,7 @@
 #                                    |_|                             
 
 cache=~/.cache/checkupdates
-cache_timeout_sec=$(( 60 * 60 * 24 )) # 24 hours
+cache_timeout_sec=$(( 60 * 60 * 6 )) # 6 hours
 signal=8
 
 checkupdates() {
