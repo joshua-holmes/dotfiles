@@ -105,8 +105,12 @@ alias server-mini='TERM=xterm ssh -i ~/.ssh/aws-archy admin@mini.holmes-software
 # FUNCTIONS
 # -----------------------------------------------------
 
-docker-clean() {
+docker-kill() {
     docker rm -f $(docker ps -aq)
+}
+
+docker-clean() {
+    docker-kill
     docker image rm -f $(docker images -q)
     docker volume rm -f $(docker volume ls -q)
 }
