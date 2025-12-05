@@ -2,6 +2,7 @@
 application/zip=org.kde.ark.desktop;
 text/plain=nvim-2.desktop;nvim.desktop;
 text/x-log=nvim.desktop;
+text/markdown=nvim-2.desktop;
 
 [Default Applications]
 application/gml+xml=firefox.desktop
