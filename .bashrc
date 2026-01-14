@@ -59,7 +59,7 @@ alias grep='grep --color=auto'
 # WINDOW MANAGER
 # -----------------------------------------------------
 
-alias hl="Hyprland"
+alias hl="start-hyprland"
 alias st="ENABLE_HDR_WSI=1 DXVK_HDR=1 gamescope --hdr-enabled --prefer-output DP-3 -w 3440 -h 1440 -e -- steam -gamepadui"
 
 # -----------------------------------------------------
@@ -99,7 +99,7 @@ alias resume='nvim ~/dev/notes/resume.md'
 
 alias server-keepass='TERM=xterm ssh -i ~/.ssh/aws-archy keepass@keepass.holmes-software.com'
 alias server-debby='TERM=xterm ssh -i ~/.ssh/id_rsa 192.168.1.69'
-alias server-mini='TERM=xterm ssh -i ~/.ssh/aws-archy admin@mini.holmes-software.com'
+alias server-mini='TERM=xterm ssh -i ~/.ssh/azure mini@mini.westus3.cloudapp.azure.com'
 
 # -----------------------------------------------------
 # FUNCTIONS
